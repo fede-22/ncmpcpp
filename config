@@ -1,0 +1,90 @@
+##############################################################
+## This is an example configuration file. Copy it to        ##
+## $XDG_CONFIG_HOME/ncmpcpp/config or $HOME/.ncmpcpp/config ##
+## and set up your preferences.                             ##
+##############################################################
+
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_connection_timeout = "5"  
+mpd_crossfade_time = "5"
+mpd_music_dir = ~/Música/
+lyrics_directory  = ~/.config/ncmpcpp/lyrics
+#execute_on_song_change  = "MediaControl nccover ; dunstify --replace=27072 -i /tmp/cover.png "Playing.." "$(mpc --format '%title% \n%artist%' current)""
+#execute_on_song_change  = "MediaControl nccover ; dunstify --replace=27072 -i /tmp/cover.png "Playing.." "$(mpc --format '%title% \n%artist%' current)""
+execute_on_song_change = notify-send -r 27072 "Playing.." "$(mpc --format '%title% \n%artist%' current)"
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = my_fifo
+
+visualizer_in_stereo = "no"
+visualizer_fps = "30"
+#visualizer_type = "spectrum" #(spectrum/wave)
+visualizer_type = "wave_filled"
+
+#visualizer_look = "██"
+#visualizer_look = "▉▋"
+visualizer_look = "▋▋"
+#visualizer_look = "◆▋"
+#visualizer_look = "◈░"
+#visualizer_look = "││"
+#visualizer_look = "▀▋"
+#visualizer_look = "▀○"
+#visualizer_look = ●▮
+#user_interface = "alternative"
+#user_interface = "classic"
+#---------- 
+# Playlist
+#----------
+song_columns_list_format = " (25)[cyan]{a}  (40)[green]{f}  (30)[red]{b}  (7f)[blue]{l}"
+song_list_format = "$7[$4%n$7]$9 $7[$9$3%l$7]$9 $1|$9 $7%a$9 $1|$9 $2%t$9 $R $5%b$9"
+now_playing_prefix = "$b🤩$4>$2>$3>"
+now_playing_suffix = "$/b"
+playlist_display_mode = "columns" #(classic/columns)
+autocenter_mode = "yes"
+centered_cursor = "yes"
+playlist_editor_display_mode = "columns"
+#------ 
+# Bars
+#------
+#song_status_format = "$8%t $1• $2%a $1•{ $5%b $1• }$7%y$1"
+#progressbar_look = "=>─"
+#song_status_format = "$b{$2%a$9 $3-$9 }$7{%t$3}"
+song_status_format = "$b$2󰣐 $7 {$b$6$8 %t $6} $7 $8"
+#progressbar_look = "─╼-"
+#progressbar_look = "─⊙ "
+progressbar_look = "─🤩 "
+#progressbar_look = "██|"
+titles_visibility = "yes"
+ 
+# Browser
+browser_playlist_prefix = "$2plist »$9 "
+browser_display_mode = "columns" #(classic/columns)
+ 
+# Colors
+discard_colors_if_item_is_selected = "yes"
+header_window_color = "83"
+volume_color = "83"
+state_line_color = "red"
+state_flags_color = "83"
+main_window_color = "cyan"
+color1 = "black"
+color2 = "green"
+#window_highlight_color = "red"
+progressbar_color = "blue"
+progressbar_elapsed_color = "197"
+statusbar_color = "83"
+#active_column_color = "blue"
+visualizer_color = "83"
+ 
+# Others
+song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
+search_engine_display_mode = "columns" #(classic/columns)
+follow_now_playing_lyrics = "yes"
+#display_screens_numbers_on_start = "no"
+# vim: set ts=2 sw=2 tw=0 :
+
+
+ 
+
+
